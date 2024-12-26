@@ -17,13 +17,11 @@ function drawTable(data: Array<Record<string, string | number>>): string {
   let header = '|'
 
   for (const head of headers) {
-    divider += '-'.repeat(colsHeaderLength[head] + 2) + '+'
+    divider += `${'-'.repeat(colsHeaderLength[head] + 2)}+`
 
-    header +=
-      ' ' +
-      head[0].toUpperCase() +
-      head.slice(1).padEnd(colsHeaderLength[head] - 1) +
-      ' |'
+    header += ` ${
+      head[0].toUpperCase() + head.slice(1).padEnd(colsHeaderLength[head] - 1)
+    } |`
   }
 
   let rows = ''
@@ -32,14 +30,15 @@ function drawTable(data: Array<Record<string, string | number>>): string {
     let rowStr = '|'
 
     for (const head of headers) {
-      rowStr += ' ' + String(row[head]).padEnd(colsHeaderLength[head]) + ' |'
+      rowStr += ` ${String(row[head]).padEnd(colsHeaderLength[head])} |`
     }
 
-    rows += rowStr + '\n'
+    rows += `${rowStr}\n`
   }
 
-  return divider + '\n' + header + '\n' + divider + '\n' + rows + divider
+  return `${divider}\n${header}\n${divider}\n${rows}${divider}`
 }
+
 console.log(
   drawTable([
     { name: 'Alice', city: 'London' },
