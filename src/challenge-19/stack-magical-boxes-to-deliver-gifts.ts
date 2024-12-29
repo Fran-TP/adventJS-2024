@@ -9,14 +9,14 @@ function distributeWeight(weight: number): string {
   const weightedBoxes: string[][] = []
   let weightClone = weight
 
-  const reversedKeys = Object.keys(boxRepresentations).reverse()
+  const giftDeliveryOrder = [10, 5, 2, 1]
 
-  for (const key of reversedKeys) {
-    const count = Math.floor(weightClone / Number(key))
-    weightClone = weightClone % Number(key)
+  for (const boxWeight of giftDeliveryOrder) {
+    const count = Math.floor(weightClone / boxWeight)
+    weightClone %= boxWeight
 
     for (let i = 0; i < count; i++) {
-      weightedBoxes.unshift(boxRepresentations[key])
+      weightedBoxes.unshift(boxRepresentations[boxWeight])
     }
   }
 
@@ -33,13 +33,14 @@ function distributeWeight(weight: number): string {
         '_'
       )
 
+      // deleted the cover of the next box to make it look like the boxes are stacked
       weightedBoxes[i + 1] = nextBox.slice(1)
 
       result += `${currBox.join('\n')}\n`
     }
   }
 
-  return result + weightedBoxes[weightedBoxes.length - 1].join('\n')
+  return result + weightedBoxes.at(-1)?.join('\n')
 }
 
 console.log(distributeWeight(1), '\n')
@@ -48,10 +49,10 @@ console.log(distributeWeight(2), '\n')
 
 console.log(distributeWeight(3), '\n')
 
-// console.log(distributeWeight(4), '\n')
+console.log(distributeWeight(4), '\n')
 
-// console.log(distributeWeight(5), '\n')
+console.log(distributeWeight(5), '\n')
 
-// console.log(distributeWeight(6), '\n')
+console.log(distributeWeight(6), '\n')
 
-console.log(distributeWeight(18))
+console.log(distributeWeight(18), '\n')
