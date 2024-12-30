@@ -1,6 +1,6 @@
 # Framing names
 
-### 🔢 Instructions
+### Description 📋
 
 **Santa Claus** 🎅 wants to frame the names of the good children to decorate his workshop 🖼️, but the frame must follow specific rules. Your task is to help the elves generate this magical frame.
 
@@ -11,7 +11,7 @@
 - The frame is built with \* and has a border one line thick.
 - The width of the frame automatically adapts to the longest name plus a margin of 1 space on each side.
 
-Example of how it works:
+### Examples 📌
 
 ```javascript
 createFrame(['midu', 'madeval', 'educalvolpz'])
@@ -40,4 +40,12 @@ createFrame(['a', 'bb', 'ccc'])
 *******
 
 createFrame(['a', 'bb', 'ccc', 'dddd'])
+
+// Expected result:
+********
+* a    *
+* bb   *
+* ccc  *
+* dddd *
+********
 ```
