@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://2021.adventjs.dev/" target="_blank">
-      <img alt="adventJS" src="https://raw.githubusercontent.com/Fran-TP/adventJS-2024/refs/heads/main/.github/logo.jpg" width="200" height="100" style="max-width: 100%;">
+      <img alt="adventJS" src="https://raw.githubusercontent.com/Fran-TP/adventJS-2024/refs/heads/main/.github/logo.webp" width="610" height="235" style="max-width: 100%;">
   </a>
 </p>
 
